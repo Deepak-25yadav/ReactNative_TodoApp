@@ -18,6 +18,7 @@ import {
 } from 'react-native';
 
 import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
+import TinderSwipeDemo from './src/screeens/TinderSwipeDemo';
 
 function Section({children, title}) {
   const isDarkMode = useColorScheme() === 'dark';
@@ -53,40 +54,42 @@ function App() {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Button
-            color={'red'}
-            title="button"
-            onPress={() => setValue(Value + 1)}
-          />
-          <Text
-            style={{
-              fontSize: 50,
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              textAlign: 'center',
-              padding: 50,
-              backgroundColor: 'red',
-              opacity: 50,
-            }}>
-            {Value}
-          </Text>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    // <SafeAreaView style={backgroundStyle}>
+    //   <StatusBar
+    //     barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+    //     backgroundColor={backgroundStyle.backgroundColor}
+    //   />
+    //   <ScrollView
+    //     contentInsetAdjustmentBehavior="automatic"
+    //     style={backgroundStyle}>
+    //     {/* <Header /> */}
+    //     {/* <View
+    //       style={{
+    //         backgroundColor: isDarkMode ? Colors.black : Colors.white,
+    //       }}>
+    //       <Button
+    //         color={'red'}
+    //         title="button"
+    //         onPress={() => setValue(Value + 1)}
+    //       />
+    //       <Text
+    //         style={{
+    //           fontSize: 50,
+    //           flexDirection: 'row',
+    //           justifyContent: 'space-between',
+    //           alignItems: 'center',
+    //           textAlign: 'center',
+    //           padding: 50,
+    //           backgroundColor: 'red',
+    //           opacity: 50,
+    //         }}>
+    //         {Value}
+    //       </Text>
+    //     </View> */}
+    //     <Text>asdhsad</Text>
+    //   </ScrollView>
+    // </SafeAreaView>
+    <TinderSwipeDemo />
   );
 }
 
