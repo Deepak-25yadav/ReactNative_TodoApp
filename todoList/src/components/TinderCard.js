@@ -1,6 +1,6 @@
 import {View, Text, Image, Dimensions, Animated} from 'react-native';
 import React, {useCallback, useRef} from 'react';
-import LinearGradient from 'react-native-linear-gradient';
+// import LinearGradient from 'react-native-linear-gradient';
 import TinderChoice from './TinderChoice';
 const {height, width} = Dimensions.get('window');
 const TinderCard = ({item, isFirst, swipe, ...rest}) => {
@@ -31,6 +31,7 @@ const TinderCard = ({item, isFirst, swipe, ...rest}) => {
           }}>
           <TinderChoice type={'Nope'} />
         </Animated.View>
+
         <Animated.View
           style={{
             position: 'absolute',
@@ -64,6 +65,35 @@ const TinderCard = ({item, isFirst, swipe, ...rest}) => {
         source={item.image}
         style={{width: '100%', height: '100%', borderRadius: 10}}
       />
+
+      <View>
+        <Text
+          style={{
+            position: 'absolute',
+            bottom: 35,
+            left: 20,
+            color: '#fff',
+            fontSize: 40,
+            fontWeight: 'bold',
+          }}>
+          {item.title}{' '}
+          <Text style={{color: 'aqua', fontSize: 30, fontWeight: '400'}}>
+            {item.age}
+          </Text>
+        </Text>
+
+        <Text
+          style={{
+            position: 'absolute',
+            bottom: 3,
+            left: 22,
+            color: 'pink',
+            fontSize: 30,
+          }}>
+          {item.location}
+        </Text>
+      </View>
+
       {isFirst && tinderSelection()}
     </Animated.View>
   );
